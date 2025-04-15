@@ -6,19 +6,15 @@ import android.webkit.WebViewClient
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 
+private const val OFFLINE_DOCUMENT_ROOT = "file:///android_asset/offline_document"
+private const val HOME_DOCUMENT = "index.html"
+
 class MainActivity : AppCompatActivity() {
-
-    companion object {
-        private const val OFFLINE_DOCUMENT_ROOT = "file:///android_asset/offline_document"
-        private const val HOME_DOCUMENT = "index.html"
-    }
-
-    private lateinit var webView: WebView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        webView = WebView(this)
+        val webView = WebView(this)
         webView.webViewClient = WebViewClient()
         webView.loadUrl("$OFFLINE_DOCUMENT_ROOT/$HOME_DOCUMENT")
 
