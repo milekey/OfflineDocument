@@ -1,5 +1,6 @@
 package com.scaredeer.offlinedocument
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -11,10 +12,12 @@ private const val HOME_DOCUMENT = "index.html"
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var webView: WebView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val webView = WebView(this)
+        webView = WebView(this)
         webView.webViewClient = WebViewClient()
         webView.loadUrl("$OFFLINE_DOCUMENT_ROOT/$HOME_DOCUMENT")
 
@@ -29,5 +32,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    /*
+    cf. Manage WebView state
+    https://developer.android.com/develop/ui/compose/quick-guides/content/manage-webview-state
+     */
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        webView.invalidate()
     }
 }

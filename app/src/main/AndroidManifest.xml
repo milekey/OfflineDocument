@@ -10,6 +10,7 @@
         android:theme="@style/Theme.OfflineDocument">
         <activity
             android:name=".MainActivity"
+            android:configChanges="screenLayout|orientation|screenSize|keyboard|keyboardHidden|smallestScreenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
