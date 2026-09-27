@@ -14,7 +14,7 @@ android {
         minSdk = 23
         targetSdk = 37
         versionCode = 1
-        versionName = "20260920"
+        versionName = "20260927"
     }
 
     buildTypes {
@@ -42,6 +42,4 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-
-    implementation(libs.androidx.appcompat)
 }
